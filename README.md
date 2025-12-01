@@ -4,3 +4,5 @@ be warned that my code is very very bad.
 and i also get a lot of help from chatgpt. but no code here is fully written by chatgpt.
 any help would be appreciated
 currently being made with godot 4.5.1
+
+CURRENTLY DOES NOT LOAD EDIT OR SAVE BYAMLS
