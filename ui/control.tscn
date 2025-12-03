@@ -1,9 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://cf6iuo18qqgnm"]
 
 [ext_resource type="Script" uid="uid://dbgjif1gav32u" path="res://byaml/file_loader.gd" id="1_elkka"]
+[ext_resource type="Script" uid="uid://b15850crff20j" path="res://byaml/byaml_handler.gd" id="2_rwsqr"]
 [ext_resource type="PackedScene" uid="uid://c8bjh8mkupvp3" path="res://3dscene/scene.tscn" id="2_sq3tw"]
-
-[sub_resource type="SphereMesh" id="SphereMesh_sq3tw"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -53,8 +52,6 @@ oversampling_override = 1.0
 initial_position = 1
 show_hidden_files = true
 
-[node name="scene_populator" type="Node" parent="file_operation_node"]
-
 [node name="open_FileDialog" type="FileDialog" parent="file_operation_node"]
 oversampling_override = 1.0
 title = "Open a File"
@@ -64,9 +61,9 @@ access = 2
 filters = PackedStringArray("*.byaml")
 show_hidden_files = true
 
+[node name="byaml_reader" type="Node" parent="."]
+script = ExtResource("2_rwsqr")
+
 [node name="Scene" parent="." instance=ExtResource("2_sq3tw")]
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-mesh = SubResource("SphereMesh_sq3tw")
-
-[connection signal="file_selected" from="file_operation_node/open_FileDialog" to="file_operation_node" method="_on_file_dialog_file_selected"]
+[connection signal="file_selected" from="file_operation_node/open_FileDialog" to="byaml_reader" method="_on_open_file_dialog_file_selected"]
