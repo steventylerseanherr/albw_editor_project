@@ -50,3 +50,5 @@ skeleton = NodePath("../Node3D/Camera3D")
 script = ExtResource("1_w0olb")
 
 [node name="Camera3D" type="Camera3D" parent="Node3D"]
+
+[node name="3dscene" type="Node3D" parent="."]

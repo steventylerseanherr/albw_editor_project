@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://cf6iuo18qqgnm"]
+[gd_scene load_steps=5 format=3 uid="uid://cf6iuo18qqgnm"]
 
 [ext_resource type="Script" uid="uid://dbgjif1gav32u" path="res://byaml/file_loader.gd" id="1_elkka"]
 [ext_resource type="Script" uid="uid://b15850crff20j" path="res://byaml/byaml_handler.gd" id="2_rwsqr"]
 [ext_resource type="PackedScene" uid="uid://c8bjh8mkupvp3" path="res://3dscene/scene.tscn" id="2_sq3tw"]
+[ext_resource type="Script" uid="uid://dm8bly4qfumqj" path="res://ui/rich_text_label.gd" id="4_qh227"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -65,5 +66,13 @@ show_hidden_files = true
 script = ExtResource("2_rwsqr")
 
 [node name="Scene" parent="." instance=ExtResource("2_sq3tw")]
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 81.0
+offset_right = 243.0
+offset_bottom = 308.0
+script = ExtResource("4_qh227")
 
 [connection signal="file_selected" from="file_operation_node/open_FileDialog" to="byaml_reader" method="_on_open_file_dialog_file_selected"]
