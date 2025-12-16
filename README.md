@@ -6,3 +6,6 @@ any help would be appreciated.
 currently being made with godot 4.5.1
 
 CURRENTLY DOES NOT LOAD EDIT OR SAVE BYAMLS
+
+credits:
+tocapa for the byaml reader bit
